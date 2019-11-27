@@ -1,0 +1,39 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "dev files for wild-about-weeds project",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andybaaall/wild-about-weeds.git"
+  },
+  "keywords": [
+    "php",
+    "custom",
+    "wordpress",
+    "theme",
+    "html",
+    "css",
+    "js"
+  ],
+  "author": "andy ball",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andybaaall/wild-about-weeds/issues"
+  },
+  "homepage": "https://github.com/andybaaall/wild-about-weeds#readme",
+  "dependencies": {
+    "bootstrap": "^4.4.0",
+    "popper.js": "^1.16.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-cssmin": "^3.0.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "jshint": "^2.10.3"
+  }
+}
