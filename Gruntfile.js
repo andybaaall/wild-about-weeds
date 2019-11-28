@@ -1,5 +1,3 @@
-// this is still a template!!
-
 module.exports = function(grunt) {
 
     // Project configuration
@@ -111,7 +109,7 @@ module.exports = function(grunt) {
                 stderr: false
             },
             target: {
-                command: 'cp -r /Users/test/Documents/workingFiles/wild-about-weeds/dist /Applications/MAMP/htdocs/wild-about-weeds/wp-content/themes && mv /Applications/MAMP/htdocs/wild-about-weeds/wp-content/themes/dist /Applications/MAMP/htdocs/wild-about-weeds/wp-content/themes/wild-about-weeds'
+                command: 'rm -r /Applications/MAMP/htdocs/wild-about-weeds/wp-content/themes/wild-about-weeds && cp -r /Users/test/Documents/workingFiles/wild-about-weeds/dist /Applications/MAMP/htdocs/wild-about-weeds/wp-content/themes && mv /Applications/MAMP/htdocs/wild-about-weeds/wp-content/themes/dist /Applications/MAMP/htdocs/wild-about-weeds/wp-content/themes/wild-about-weeds'
             },
         },
         uglify: {
@@ -123,7 +121,10 @@ module.exports = function(grunt) {
         },
         watch: {
             files: ['dev/assets/js/script.js', 'dev/assets/css/master.css'],
-            tasks: ['jshint', 'csslint', 'uglify', 'cssmin']
+            tasks: ['jshint', 'csslint', 'uglify', 'cssmin'],
+            options: {
+                reload: true
+            }
         }
     });
 
@@ -141,7 +142,7 @@ module.exports = function(grunt) {
     grunt.registerTask('default', function() {
         grunt.log.write('Grunt is up and running!').ok();
     });
-    
+
     grunt.registerTask('makeDist', ['copy', 'shell']);
     grunt.registerTask('runWatch', ['watch']);
 };
