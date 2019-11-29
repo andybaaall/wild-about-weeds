@@ -5,46 +5,55 @@
     <?php require 'links.php';?>
 
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title><?php echo get_bloginfo( $show, 'name' ); ?></title>
     <link rel="stylesheet" href=<?php echo $bootstrapStylesheet ?>>
     <link rel="stylesheet" href=<?php echo $stylesheet ?>>
 </head>
 <body>
 
-    <?php if(has_nav_menu( 'top_navigation' )): ?>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <?php
+    // hero colours
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                </form>
+    // if not set in customiser
+    $mainColour = '#A6B56A';
+    $typeColour = '#F6F9E9';
+    $accentColour = '#DADBD8';
+    $dividerColour = '#4F5456';
+
+    // else:
+
+
+    // logo image
+    // if logo set by user -> logo image = that
+    // else logo image = default image
+    $logoImage = "";
+
+    ?>
+
+    <!-- navbar / logo-->
+    <nav class="header-footer-container" role="navigation" style="background-color: <?php echo $mainColour ?>">
+        <div class="container">
+            <div class="row my-2">
+                <div class="col center-text">
+                    <a href="#">hello world</a>
+                </div>
             </div>
-        </nav>
-    <?php endif; ?>
+
+            <?php if (get_nav_menu_locations('top_navigation')): ?>
+            <?php
+            $menuLocations = get_nav_menu_locations();
+            $menuId = $menuLocations['top_navigation'];
+            $topNav = wp_get_nav_menu_items($menuId);
+            ?>
+            <?php endif; ?>
+
+            <div id="desktopNav" class="row">
+                <?php foreach ($topNav as $navItem): ?>
+                    <?php echo '<div class="col center-text"><a href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a></div>'; ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+    </nav>

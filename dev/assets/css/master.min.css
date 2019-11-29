@@ -1,0 +1,1 @@
+.header-footer-container{min-height:15vh;min-width:100vw;display:flex;justify-content:space-around}#top_navigation li{width:100%}.center-text{text-align:center}@media only screen and (max-width:768px){.header-footer-container{min-height:20vw}#desktopNav{display:none}}

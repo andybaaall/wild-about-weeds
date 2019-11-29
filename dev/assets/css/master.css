@@ -1,0 +1,32 @@
+/* green - A6B56A */
+/* white - F6F9E9 */
+/* light grey - DADBD8 */
+/* slate - 4F5456 */
+
+.header-footer-container{
+    min-height: 15vh;
+    min-width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+#top_navigation li {
+    width: 100%;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* media queries */
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .header-footer-container{
+      min-height: 20vw;
+  }
+
+  #desktopNav {
+      display: none;
+  }
+}

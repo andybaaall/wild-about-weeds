@@ -11,13 +11,12 @@
 // $bootstrapStylesheet = "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 // dist
-$script = "wp-content/themes/wild-about-weeds/js/script.min.js";
-$stylesheet = "wp-content/themes/wild-about-weeds/css/master.min.css";
+$script =  get_template_directory_uri() . '/js/script.min.js';
+$stylesheet =  get_template_directory_uri() . '/css/master.min.css';
 
-$popperJS = "wp-content/themes/wild-about-weeds/js/popper.min.js";
-$jQuery = "wp-content/themes/wild-about-weeds/js/jquery.min.js";
-$bootstrapScript = "wp-content/themes/wild-about-weeds/js/bootstrap.min.js";
-$bootstrapStylesheet = "wp-content/themes/wild-about-weeds/css/bootstrap.min.css";
-
+$popperJS =  get_template_directory_uri() . '/js/popper.min.js';
+$jQuery =  get_template_directory_uri() . '/js/jquery.min.js';
+$bootstrapScript =  get_template_directory_uri() . '/js/bootstrap.min.js';
+$bootstrapStylesheet =  get_template_directory_uri() . '/css/bootstrap.min.css';
 
 ?>
