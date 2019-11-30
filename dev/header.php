@@ -14,46 +14,48 @@
 <body>
 
     <?php
-    // hero colours
+    // theme settings
 
-    // if not set in customiser
+    // hero colours
     $mainColour = '#A6B56A';
     $typeColour = '#F6F9E9';
     $accentColour = '#DADBD8';
     $dividerColour = '#4F5456';
 
-    // else:
-
-
     // logo image
-    // if logo set by user -> logo image = that
-    // else logo image = default image
-    $logoImage = "";
+    if (get_theme_mod('wildWeeds_logoSetting') != null) {
+        $logoBg = get_theme_mod('wildWeeds_logoSetting');
+    } else {
+        $logoBg =  get_template_directory_uri() . '/img/waw_logo_no-caption.png';
+    }
 
     ?>
 
     <!-- navbar / logo-->
     <nav class="header-footer-container" role="navigation" style="background-color: <?php echo $mainColour ?>">
         <div class="container">
-            <div class="row my-2">
-                <div class="col center-text">
-                    <a href="#">hello world</a>
-                </div>
-            </div>
 
-            <?php if (get_nav_menu_locations('top_navigation')): ?>
+        <div class="row my-2">
+            <div class="col d-flex justify-content-center">
+                <a href="#" class="nav-logo " style="
+                    background-image: url(<?php echo $logoBg; ?>) !important;
+                "></a>
+            </div>
+        </div>
+
+        <?php if (get_nav_menu_locations('top_navigation')): ?>
             <?php
             $menuLocations = get_nav_menu_locations();
             $menuId = $menuLocations['top_navigation'];
             $topNav = wp_get_nav_menu_items($menuId);
             ?>
-            <?php endif; ?>
+        <?php endif; ?>
 
-            <div id="desktopNav" class="row">
+        <div id="desktopNav" class="row d-flex justify-content-between mb-2">
                 <?php foreach ($topNav as $navItem): ?>
-                    <?php echo '<div class="col center-text"><a href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a></div>'; ?>
+                    <?php echo '<div class="col d-flex justify-content-around"><a class="nav-link-text" href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a></div>'; ?>
                 <?php endforeach; ?>
-            </div>
         </div>
+    </div>
 
-    </nav>
+</nav>

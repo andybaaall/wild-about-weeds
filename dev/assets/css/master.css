@@ -4,29 +4,30 @@
 /* slate - 4F5456 */
 
 .header-footer-container{
-    min-height: 15vh;
-    min-width: 100vw;
     display: flex;
     justify-content: space-around;
+    min-height: 15vh;
+    min-width: 100vw;
 }
 
-#top_navigation li {
-    width: 100%;
-}
-
-.center-text {
-    text-align: center;
+.nav-logo {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: flex;
+    height: 8rem ;
+    width: 8rem ;
 }
 
 /* media queries */
 
 @media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  .header-footer-container{
-      min-height: 20vw;
-  }
+    /* For mobile phones: */
+    .header-footer-container{
+        min-height: 20vw;
+    }
 
-  #desktopNav {
-      display: none;
-  }
+    #desktopNav * {
+        display: none;
+    }
 }

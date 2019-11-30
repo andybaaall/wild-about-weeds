@@ -11,6 +11,11 @@
 // $bootstrapStylesheet = "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 // dist
+
+// dist/img/waw_logo_no-caption.png - project path
+// http://localhost:8888/wild-about-weeds/wp-content/themes/wild-about-weeds - template directory
+
+
 $script =  get_template_directory_uri() . '/js/script.min.js';
 $stylesheet =  get_template_directory_uri() . '/css/master.min.css';
 
