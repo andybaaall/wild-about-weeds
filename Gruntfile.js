@@ -8,6 +8,7 @@ module.exports = function(grunt) {
             src: 'dev',
             dest: 'dist',
             modules: 'node_modules',
+            inc: 'inc'
         },
         // Task options
         copy: {
@@ -68,6 +69,15 @@ module.exports = function(grunt) {
                         dest: '<%= meta.dest %>/js'
                     },
                     {
+                        // jQuery
+                        expand: true,
+                        cwd: '<%= meta.modules %>',
+                        src: 'jquery/dist/jquery.min.js',
+                        flatten: true,
+                        filter: 'isFile',
+                        dest: '<%= meta.dest %>/js'
+                    },
+                    {
                         // image folder
                         expand: true,
                         cwd: '<%= meta.src %>',
@@ -75,6 +85,15 @@ module.exports = function(grunt) {
                         flatten: true,
                         filter: 'isFile',
                         dest: '<%= meta.dest %>/img'
+                    },
+                    {
+                        // inc folder
+                        expand: true,
+                        cwd: '<%= meta.src %>',
+                        src: 'inc/**',
+                        flatten: true,
+                        filter: 'isFile',
+                        dest: '<%= meta.dest %>/inc'
                     }
                 ],
             }
