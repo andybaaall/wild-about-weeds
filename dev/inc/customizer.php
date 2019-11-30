@@ -68,9 +68,26 @@ add_action( 'customize_register', 'wildWeeds_customize_register' );
 function wildWeeds_customize_css(){
     ?>
     <style type="text/css">
-        /* some css happens bc of the colour controls */
-    </style>
 
+    /* green - A6B56A */
+    /* white - F6F9E9 */
+    /* light grey - DADBD8 */
+    /* slate - 4F5456 */
+
+    .hamburger-menu-dropdown {
+        background-color:  <?php echo get_theme_mod('wildWeeds_coloursSetting-mainColour', '#A6B56A'); ?> !important;
+    }
+
+    .header-footer-container-colour {
+        background-color:  <?php echo get_theme_mod('wildWeeds_coloursSetting-mainColour', '#A6B56A'); ?> !important;
+    }
+
+
+    .nav-link-text-colour {
+        color:  <?php echo get_theme_mod('wildWeeds_coloursSetting-typeColour', '#4F5456'); ?> !important;
+    }
+
+    </style>
 
     <?php
 }
