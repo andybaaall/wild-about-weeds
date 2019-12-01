@@ -67,12 +67,13 @@ if (get_theme_mod('wildWeeds_logoSetting') != null) {
         </div>
     </div>
 </nav>
-<div class="hamburger-menu-dropdown">
+<div class="hamburger-menu-dropdown hamburger-menu-dropdown-bg">
     <div class="container">
         <?php foreach ($topNav as $navItem): ?>
             <?php echo '<div class="row">
                             <a class="my-3 w-100 nav-link-text nav-link-text-colour" href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a>
                         </div>'; ?>
         <?php endforeach; ?>
+
     </div>
 </div>
