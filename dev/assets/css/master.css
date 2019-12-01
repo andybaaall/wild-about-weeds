@@ -66,8 +66,8 @@
 }
 
 .footer-container-page {
-    position: absolute;
     bottom: 0;
+    position: absolute;
     z-index: 300;
 }
 
