@@ -49,6 +49,7 @@
 
 .index-page-content {
     display: block;
+    margin-bottom: 16vh;
 }
 
 .nav-link-text {
@@ -67,7 +68,7 @@
 
 .footer-container-page {
     bottom: 0;
-    position: absolute;
+    position: fixed;
     z-index: 300;
 }
 
@@ -78,7 +79,6 @@
     display: flex;
     height: 3rem;
     width: 3rem;
-
 }
 
 /* media queries */
