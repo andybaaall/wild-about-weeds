@@ -42,7 +42,7 @@ if (get_theme_mod('wildWeeds_logoSetting') != null) {
         <!-- logo -->
         <div class="row">
             <div class="col d-flex justify-content-center align-items-center">
-                <a href="#" class="nav-logo" aria-label="Wild About Weeds"  style="
+                <a href="<?php echo $home ?>" class="nav-logo" aria-label="Wild About Weeds"  style="
                     background-image: url(<?php echo $logoBg; ?>) ;
                 "></a>
             </div>
@@ -64,7 +64,6 @@ if (get_theme_mod('wildWeeds_logoSetting') != null) {
                                     <a class="nav-link-text nav-link-text-colour" href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a>
                                 </div>'; ?>
                 <?php endforeach; ?>
-                <!-- footer container menu went here -->
         </div>
     </div>
 </nav>

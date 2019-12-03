@@ -17,41 +17,42 @@
                 <?php while ( $typePost_query->have_posts() ): ?>
 
                     <?php $typePost_query->the_post();?>
-                    <?php echo 'post id is ' . $post->ID ?>
-                    <br>
-                    <?php echo the_title(); ?>
                     <?php
-                    // $children = get_children( $post->ID );
-                    // if ( !empty($children) ) {
-                    //     echo 'this post has children (maybe images)';
-                    // } else {
-                    //     echo 'this post has no children (maybe images)';
-                    // }
+                    // right now, this is showing the first upload only, and on every post
 
-                    // print_r( get_children($post->ID) );
+                    if(has_blocks()){
+                        $allBlocks = parse_blocks( get_the_content() );
+                        for ($i=0; $i < count($allBlocks); $i++) {
+                            if($allBlocks[$i]['blockName'] == 'core/image'){
+                                echo $allBlocks[$i]; 
 
-                    $images = get_posts(array(
-                        'post_parent'    => $post->ID,
-                        'post_type'      => 'attachment',
-                        'post_mime_type' => 'image',
-                        'post_status'    => 'inherit'
-                    ));
+                            }
+                        }
 
-                    if ($images) {
-                        echo "post has images";
-                    } else {
-                        echo "post has no images";
-                    }
+                    };
+                    ?>
 
-                ?>
-                <br>
-                <br>
+                    <div class="card blogCard">
+                        <h5 class="card-header"><?php the_title(); ?></h5>
+                        <div class="card-body">
+                            <div class="row">
+                                <?php if(isset($firstImageBlock)): ?>
+                                    <div class="col-12">
+                                        <?php echo apply_filters( 'the_content', render_block( $firstImageBlock ) ); ?>
+                                    </div>
+                                <?php endif; ?>
+                                <div class="col">
+                                    <a href="<?php the_permalink(); ?>" class="btn btn-info">View Image</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <?php endwhile; ?>
-            <?php wp_reset_postdata(); ?>
-        <?php endif; ?>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+        </div>
     </div>
-</div>
 </div>
 
 <?php get_footer(); ?>
