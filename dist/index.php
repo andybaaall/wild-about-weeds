@@ -17,32 +17,26 @@
                 <?php while ( $typePost_query->have_posts() ): ?>
 
                     <?php $typePost_query->the_post();?>
-                    <?php
-                    // right now, this is showing the first upload only, and on every post
-
-                    if(has_blocks()){
-                        $allBlocks = parse_blocks( get_the_content() );
-                        for ($i=0; $i < count($allBlocks); $i++) {
-                            if($allBlocks[$i]['blockName'] == 'core/image'){
-                                echo $allBlocks[$i]; 
-
-                            }
-                        }
-
-                    };
-                    ?>
 
                     <div class="card blogCard">
                         <h5 class="card-header"><?php the_title(); ?></h5>
                         <div class="card-body">
                             <div class="row">
-                                <?php if(isset($firstImageBlock)): ?>
-                                    <div class="col-12">
-                                        <?php echo apply_filters( 'the_content', render_block( $firstImageBlock ) ); ?>
-                                    </div>
-                                <?php endif; ?>
-                                <div class="col">
-                                    <a href="<?php the_permalink(); ?>" class="btn btn-info">View Image</a>
+                                <div class="col-12">
+                                    <?php
+                                    if(has_blocks()){
+                                        $allBlocks = parse_blocks( get_the_content() );
+                                        for ($i=0; $i < count($allBlocks); $i++) {
+                                            if($allBlocks[$i]['blockName'] == 'core/image'){
+                                                $block = $allBlocks[$i];
+                                                echo apply_filters( 'the_content', render_block( $block ) );
+
+
+                                            }
+                                        }
+
+                                    };
+                                    ?>
                                 </div>
                             </div>
                         </div>
