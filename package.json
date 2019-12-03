@@ -1,46 +1,51 @@
 {
-  "name": "wild-about-weeds",
-  "version": "1.0.0",
-  "description": "custom wordpress theme for yoobee school of design ",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/andybaaall/wild-about-weeds.git"
-  },
-  "keywords": [
-    "npm",
-    "php",
-    "css",
-    "js",
-    "wordpress",
-    "custom",
-    "theme",
-    "custom",
-    "wordpress",
-    "theme"
-  ],
-  "author": "andy ball",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/andybaaall/wild-about-weeds/issues"
-  },
-  "homepage": "https://github.com/andybaaall/wild-about-weeds#readme",
-  "dependencies": {
-    "bootstrap": "^4.4.0",
-    "jquery": "^3.4.1",
-    "popper.js": "^1.16.0"
-  },
-  "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-csslint": "^2.0.0",
-    "grunt-contrib-cssmin": "^3.0.0",
-    "grunt-contrib-jshint": "^2.1.0",
-    "grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-shell": "^3.0.1"
-  }
+    "name": "wild-about-weeds",
+    "version": "1.0.0",
+    "description": "custom wordpress theme for yoobee school of design ",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/andybaaall/wild-about-weeds.git"
+    },
+    "keywords": [
+        "npm",
+        "php",
+        "css",
+        "js",
+        "wordpress",
+        "custom",
+        "theme",
+        "custom",
+        "wordpress",
+        "theme"
+    ],
+    "author": "andy ball",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/andybaaall/wild-about-weeds/issues"
+    },
+    "homepage": "https://github.com/andybaaall/wild-about-weeds#readme",
+    "dependencies": {
+        "autoprefixer": "^9.7.3",
+        "bootstrap": "^4.4.0",
+        "cssnano": "^4.1.10",
+        "jquery": "^3.4.1",
+        "pixrem": "^5.0.0",
+        "popper.js": "^1.16.0"
+    },
+    "devDependencies": {
+        "browserslist": "^4.8.0",
+        "grunt": "^1.0.4",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-csslint": "^2.0.0",
+        "grunt-contrib-cssmin": "^3.0.0",
+        "grunt-contrib-jshint": "^2.1.0",
+        "grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-postcss": "^0.9.0",
+        "grunt-shell": "^3.0.1"
+    },
 }
