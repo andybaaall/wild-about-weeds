@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title><?php echo get_bloginfo( $show, 'name' ); ?></title>
-    <link rel="stylesheet" href=<?php echo $bootstrapStylesheet ?>>
-    <link rel="stylesheet" href=<?php echo $stylesheet ?>>
 </head>
 <body>
 
@@ -40,13 +38,6 @@ if (get_theme_mod('wildWeeds_logoSetting') != null) {
 <nav class="header-footer-container header-footer-container-colour" role="navigation">
     <div class="container">
         <!-- logo -->
-        <?php 
-        if (file_exists( get_template_directory() . 'home.php') ) {
-            $home =   'home.php';
-        } else {
-            $home =   'index.php';
-        }
-         ?>
         <div class="row">
             <div class="col d-flex justify-content-center align-items-center">
                 <a href="<?php echo $home ?>" class="nav-logo" aria-label="Wild About Weeds"  style="

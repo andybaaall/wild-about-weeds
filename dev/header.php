@@ -8,8 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title><?php echo get_bloginfo( $show, 'name' ); ?></title>
-    <link rel="stylesheet" href=<?php echo $bootstrapStylesheet ?>>
-    <link rel="stylesheet" href=<?php echo $stylesheet ?>>
 </head>
 <body>
 

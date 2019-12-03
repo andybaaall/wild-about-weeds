@@ -131,23 +131,6 @@ module.exports = function(grunt) {
                 command: 'rm -r /Applications/MAMP/htdocs/wild-about-weeds/wp-content/themes/wild-about-weeds && cp -r /Users/test/Documents/workingFiles/wild-about-weeds/dist /Applications/MAMP/htdocs/wild-about-weeds/wp-content/themes && mv /Applications/MAMP/htdocs/wild-about-weeds/wp-content/themes/dist /Applications/MAMP/htdocs/wild-about-weeds/wp-content/themes/wild-about-weeds'
             },
         },
-        postcss: {
-            options: {
-                map: {
-                    inline: false, // save all sourcemaps as separate files...
-                    annotation: '<%= meta.src %>/css/*.css' // ...to the specified directory
-                },
-
-                processors: [
-                    require('pixrem')(), // add fallbacks for rem units
-                    require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
-                    require('cssnano')() // minify the result
-                ]
-            },
-            dist: {
-                src: '<%= meta.src %>/css/*.css'
-            }
-        },
         uglify: {
             my_target: {
                 files: {
@@ -169,7 +152,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-csslint');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-contrib-uglify-es');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-shell');
@@ -180,6 +162,6 @@ module.exports = function(grunt) {
         grunt.log.write('Grunt is up and running!').ok();
     });
 
-    grunt.registerTask('makeDist', ['copy', 'postcss', 'shell']);
+    grunt.registerTask('makeDist', ['copy', 'shell']);
     grunt.registerTask('runWatch', ['watch']);
 };
