@@ -22,7 +22,7 @@
 
 .hamburger-container {
     height: 8rem;
-    margin-left: 2rem;
+    margin: 0 2rem;
     max-height: 15vh;
     max-width: 15vw;
     position: absolute !important;
@@ -41,15 +41,13 @@
 }
 
 .header-footer-container{
-    display: flex;
-    justify-content: space-around;
     min-height: 15vh;
     min-width: 100vw;
 }
 
 .index-page-content {
     display: block;
-    margin-bottom: 16vh;
+    margin-bottom: 22vh;
 }
 
 .nav-link-text {
@@ -81,8 +79,15 @@
     width: 3rem;
 }
 
-figure:first-child {
-    display: none;
+.blog-preview-image-container img {
+    max-width: 75%;
+    height: auto;
+}
+
+.absolute-centered {
+    position: absolute;
+    left: 25%;
+    right: 25%;
 }
 
 /* media queries */
@@ -105,7 +110,7 @@ figure:first-child {
 
 @media only screen and (min-width: 769px) {
     /* For mobile phones: */
-    .hamburger-container {
+    .mobile-only {
         display: none;
     }
 }

@@ -1,6 +1,5 @@
 <?php
 
-
 function wildWeeds_customize_register( $wp_customize ) {
 
     // logo
@@ -61,11 +60,19 @@ function wildWeeds_customize_register( $wp_customize ) {
             'settings'   => 'wildWeeds_coloursSetting-dividerColour'
         ) ) );
 
-    // social media
+    // social media and email
     $wp_customize->add_section( 'wildWeeds_socialSection' , array(
         'title'      => __( 'Social Media and Email', 'wildWeeds' ),
         'priority'   => 160,
     ) );
+        $wp_customize->add_setting( 'wildWeeds_socialSetting-msgName' , array(
+            'default'   => '',
+            'transport' => 'refresh'
+        ) );
+        $wp_customize->add_setting( 'wildWeeds_socialSetting-msgPhone' , array(
+            'default'   => '',
+            'transport' => 'refresh'
+        ) );
         $wp_customize->add_setting( 'wildWeeds_socialSetting-email' , array(
             'default'   => '',
             'transport' => 'refresh'
@@ -96,13 +103,41 @@ function wildWeeds_customize_register( $wp_customize ) {
           'section'    => 'wildWeeds_socialSection',
           'settings'   => 'wildWeeds_socialSetting-pinterest'
         ) ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wildWeeds_socialControl-msgName', array(
+          'label'      => __( 'Name', 'wildWeeds' ),
+          'description' => 'Let your audience know who they\'re getting in touch with. You could write something like "Your Name", "Your Business", or "the team". If you leave this field blank, the blog title will be displayed instead. (Mobile displays only.)',
+          'section'    => 'wildWeeds_socialSection',
+          'settings'   => 'wildWeeds_socialSetting-msgName'
+        ) ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wildWeeds_socialControl-msgPhone', array(
+          'label'      => __( 'Phone', 'wildWeeds' ),
+          'description' => 'Attach an optional contact phone number. If you leave the field blank, no phone number will be displayed. (Mobile displays only.)',
+          'section'    => 'wildWeeds_socialSection',
+          'settings'   => 'wildWeeds_socialSetting-msgPhone'
+        ) ) );
 
-
-
-
+    // hamburger menu left / right
+    $wp_customize->add_section( 'wildWeeds_hamburgerLayoutSection' , array(
+        'title'      => __( 'Mobile Menu Button Position', 'wildWeeds' ),
+        'priority'   => 161
+    ) );
+        $wp_customize->add_setting( 'wildWeeds_hamburgerLayoutSetting' , array(
+            'default'   => 'left',
+            'transport' => 'refresh',
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, '1902_sidebarPositionControl', array(
+          'label'      => __( 'Mobile Menu Button Position', 'wildWeeds' ),
+          'description'=> 'This controls whether the mobile menu button is displayed on the left or the right of the page header. By default, it will be shown on the left.',
+          'section'    => 'wildWeeds_hamburgerLayoutSection',
+          'settings'   => 'wildWeeds_hamburgerLayoutSetting',
+          'type'       => 'radio',
+          'choices'    => array(
+              'left' => 'Left',
+              'right' => 'Right'
+          ) )   ) );
 }
-add_action( 'customize_register', 'wildWeeds_customize_register' );
 
+add_action( 'customize_register', 'wildWeeds_customize_register' );
 
 function wildWeeds_customize_css(){
     ?>
@@ -125,9 +160,18 @@ function wildWeeds_customize_css(){
         color:  <?php echo get_theme_mod('wildWeeds_coloursSetting-typeColour', '#4F5456'); ?> !important;
     }
 
+    .footer-link-text {
+        color:  <?php echo get_theme_mod('wildWeeds_coloursSetting-accentColour', '#F6F9E9'); ?> !important;
+    }
 
+    .hamburger-left-right {
+        <?php if (get_theme_mod('wildWeeds_hamburgerLayoutSetting') === 'right'): ?>
+            <?php echo 'right: 2rem;';?>
+        <?php else: ?>
+            <?php echo 'left: 2rem;'; ?>
+        <?php endif; ?>
+    }
     </style>
-
     <?php
 }
 add_action( 'wp_head', 'wildWeeds_customize_css');

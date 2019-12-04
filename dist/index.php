@@ -17,8 +17,8 @@
 
                 <?php $typePost_query->the_post();?>
 
-                <div class="col-12 col-md-4 my-4">
-                    <h4 class="text-center type-colour"><?php the_title(); ?></h2>
+                <div class="col-12 col-md-4 my-4 blog-preview-container">
+                    <h4 class="text-center type-colour mt-5"><?php the_title(); ?></h2>
                     <div class="blog-preview-image-container">
                         <?php
                         if(has_blocks()){
@@ -33,7 +33,7 @@
                          ?>
                     </div>
                     <p class="type-colour"><?php the_excerpt(); ?></p>
-                    <!-- button here -->
+                    <a class="btn btn-round type-colour hamburger-menu-dropdown-bg absolute-centered mb-5">See more</a>
                 </div>
 
             <?php endwhile; ?>
