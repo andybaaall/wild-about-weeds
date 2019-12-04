@@ -20,14 +20,14 @@ if (file_exists( get_template_directory() . 'home.php') ) {
 } else {
     $home =   'index.php';
 }
-
-
-$script =  get_template_directory_uri() . '/js/script.min.js';
-$stylesheet =  get_template_directory_uri() . '/css/master.min.css';
-
-$popperJS =  get_template_directory_uri() . '/js/popper.min.js';
-$jQuery =  get_template_directory_uri() . '/js/jquery.min.js';
-$bootstrapScript =  get_template_directory_uri() . '/js/bootstrap.min.js';
-$bootstrapStylesheet =  get_template_directory_uri() . '/css/bootstrap.min.css';
+// 
+//
+// $script =  get_template_directory_uri() . '/js/script.min.js';
+// $stylesheet =  get_template_directory_uri() . '/css/master.min.css';
+//
+// $popperJS =  get_template_directory_uri() . '/js/popper.min.js';
+// $jQuery =  get_template_directory_uri() . '/js/jquery.min.js';
+// $bootstrapScript =  get_template_directory_uri() . '/js/bootstrap.min.js';
+// $bootstrapStylesheet =  get_template_directory_uri() . '/css/bootstrap.min.css';
 
 ?>

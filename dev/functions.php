@@ -8,26 +8,14 @@ function custom_menus_wildWeeds(){
 add_action('after_setup_theme', 'custom_menus_wildWeeds');
 
 // custom files
-
 function add_theme_scripts() {
     wp_enqueue_style( 'bootstrap.min.css', get_template_directory_uri() . '/css/bootstrap.min.css' );
     wp_enqueue_style( 'master.min.css', get_template_directory_uri() . '/css/master.min.css' );
-    // wp_enqueue_script( $handle, $src, $deps, $ver, $in_footer);
-    wp_enqueue_script( '/js/script.min.js', get_template_directory_uri() . '/js/script.min.js');
+
     wp_enqueue_script( '/js/jquery.min.js', get_template_directory_uri() . '/js/jquery.min.js');
+    wp_enqueue_script( '/js/script.min.js', get_template_directory_uri() . '/js/script.min.js');
     wp_enqueue_script( '/js/bootstrap.min.js', get_template_directory_uri() . '/js/bootstrap.min.js');
     wp_enqueue_script( '/js/popper.min.js', get_template_directory_uri() . '/js/popper.min.js');
-
-
-    $script =  get_template_directory_uri() . '/js/script.min.js';
-    $stylesheet =  get_template_directory_uri() . '/css/master.min.css';
-
-    $popperJS =  get_template_directory_uri() . '/js/popper.min.js';
-    $jQuery =  get_template_directory_uri() . '/js/jquery.min.js';
-    $bootstrapScript =  get_template_directory_uri() . '/js/bootstrap.min.js';
-    $bootstrapStylesheet =  get_template_directory_uri() . '/css/bootstrap.min.css';
-
-
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 

@@ -121,9 +121,10 @@ function wildWeeds_customize_css(){
         background-color:  <?php echo get_theme_mod('wildWeeds_coloursSetting-mainColour', '#A6B56A'); ?> !important;
     }
 
-    .nav-link-text-colour {
+    .type-colour {
         color:  <?php echo get_theme_mod('wildWeeds_coloursSetting-typeColour', '#4F5456'); ?> !important;
     }
+
 
     </style>
 

@@ -17,11 +17,23 @@
 
                 <?php $typePost_query->the_post();?>
 
-                <div class="blog-preview-container col-12 col-md-4">
-                    <h2>blog title</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <br>
-                    img
+                <div class="col-12 col-md-4 my-4">
+                    <h4 class="text-center type-colour"><?php the_title(); ?></h2>
+                    <div class="blog-preview-image-container">
+                        <?php
+                        if(has_blocks()){
+                            $allBlocks = parse_blocks( get_the_content() );
+                            for ($i=0; $i < count($allBlocks); $i++) {
+                                if($allBlocks[$i]['blockName'] == 'core/image'){
+                                    $block = $allBlocks[$i];
+                                    echo apply_filters( 'the_content', render_block( $block ) );
+                                }
+                            }
+                        };
+                         ?>
+                    </div>
+                    <p class="type-colour"><?php the_excerpt(); ?></p>
+                    <!-- button here -->
                 </div>
 
             <?php endwhile; ?>

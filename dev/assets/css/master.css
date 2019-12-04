@@ -81,6 +81,10 @@
     width: 3rem;
 }
 
+figure:first-child {
+    display: none;
+}
+
 /* media queries */
 
 @media only screen and (max-width: 425px) {

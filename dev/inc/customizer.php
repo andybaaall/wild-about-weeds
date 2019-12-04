@@ -61,7 +61,7 @@ function wildWeeds_customize_register( $wp_customize ) {
             'settings'   => 'wildWeeds_coloursSetting-dividerColour'
         ) ) );
 
-    // social media
+    // social media and email
     $wp_customize->add_section( 'wildWeeds_socialSection' , array(
         'title'      => __( 'Social Media and Email', 'wildWeeds' ),
         'priority'   => 160,
@@ -121,9 +121,10 @@ function wildWeeds_customize_css(){
         background-color:  <?php echo get_theme_mod('wildWeeds_coloursSetting-mainColour', '#A6B56A'); ?> !important;
     }
 
-    .nav-link-text-colour {
+    .type-colour {
         color:  <?php echo get_theme_mod('wildWeeds_coloursSetting-typeColour', '#4F5456'); ?> !important;
     }
+
 
     </style>
 
