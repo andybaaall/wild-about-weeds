@@ -32,7 +32,7 @@
     <!-- navbar / logo-->
     <!-- hamburger button -->
     <?php if (get_nav_menu_locations('top_navigation')): ?>
-        <div class="hamburger-container hamburger-left-right">
+        <div class="hamburger-container hamburger-left-right mobile-only">
             <div class="col d-flex justify-content-center align-items-center">
                 <div id="hamburgerBtn" class="hamburger-button" aria-label="Menu Button - opens and closes menu" style="
                 background-image: url(<?php echo get_template_directory_uri() . '/img/hamburger-button.svg'?>) ;

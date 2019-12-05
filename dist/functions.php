@@ -19,35 +19,35 @@ function add_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
+// services post type
+function add_custom_post_types(){
+    $serviceArgs = array(
+        'labels' => array(
+            'name' => 'Services',
+            'singular_name' => 'Service',
+            'add_new_item' => ''
+        ),
+        'description' => '',
+        'public' => true,
+        'hierarchical' => true,
+        'show_in_nav_menus' => true,
+        'show_in_rest' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-feedback',
+        'supports' => array(
+            'title',
+            'editor',
+            'post-formats',
+        ),
+        'delete_with_user' => false
+    );
 
-// // services post type
-// function add_custom_post_types(){
-//
-//     $serviceArgs = array(
-//         'labels' => array(
-//             'name' => 'Services',
-//             'singular_name' => 'Service',
-//             'add_new_item' => ''
-//         ),
-//         'description' => '',
-//         'public' => true,
-//         'hierarchical' => true,
-//         'show_in_nav_menus' => false,
-//         'show_in_rest' => false,
-//         'menu_position' => 6,
-//         'menu_icon' => 'dashicons-tickets-alt',
-//         'supports' => array(
-//             'title',
-//             'editor',
-//             'thumbnail',
-//             'post-formats'
-//         ),
-//         'delete_with_user' => false
-//     );
-//
-//     register_post_type('service', $serviceArgs);
-// }
+    register_post_type('service', $serviceArgs);
+}
+add_action('init', 'add_custom_post_types');
 
 require_once get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/custom_fields.php';
+
 
 ?>

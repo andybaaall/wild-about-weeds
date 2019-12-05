@@ -125,7 +125,7 @@ function wildWeeds_customize_register( $wp_customize ) {
             'default'   => 'left',
             'transport' => 'refresh',
         ) );
-        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, '1902_sidebarPositionControl', array(
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wildWeeds_hamburgerLayoutControl', array(
           'label'      => __( 'Mobile Menu Button Position', 'wildWeeds' ),
           'description'=> 'This controls whether the mobile menu button is displayed on the left or the right of the page header. By default, it will be shown on the left.',
           'section'    => 'wildWeeds_hamburgerLayoutSection',
@@ -171,6 +171,11 @@ function wildWeeds_customize_css(){
             <?php echo 'left: 2rem;'; ?>
         <?php endif; ?>
     }
+
+    .dividers-parent section:nth-child(even){
+        background-color: <?php echo get_theme_mod('wildWeeds_coloursSetting-dividerColour', '#DADBD8'); ?>
+    }
+
     </style>
     <?php
 }
