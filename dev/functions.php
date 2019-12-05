@@ -42,6 +42,8 @@ function add_custom_post_types(){
         'delete_with_user' => false
     );
 
+
+
     register_post_type('service', $serviceArgs);
 }
 add_action('init', 'add_custom_post_types');
