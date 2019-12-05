@@ -21,10 +21,10 @@
         $logoBg =  get_template_directory_uri() . '/img/waw_logo_no-caption.png';
     }
 
-    if (file_exists( get_template_directory() . 'home.php') ) {
-        $home =   'home.php';
+    if (file_exists( get_template_directory() . '/front-page.php') ) {
+        $home =  get_site_url();
     } else {
-        $home =   'index.php';
+        $home =  get_site_url() . '/index.php';
     }
 
     ?>

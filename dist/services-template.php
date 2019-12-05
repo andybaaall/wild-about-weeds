@@ -7,7 +7,7 @@ Template Post Type: page
 
 <?php get_header(); ?>
 
-<h3 class="text-center type-colour">Our Services:</h1>
+<h3 class="text-center type-colour page-content">Our Services:</h1>
     <div class="container page-content">
         <div class="row dividers-parent">
             <?php
@@ -29,22 +29,19 @@ Template Post Type: page
                             <br>
                             <small><?php echo get_post_meta(get_the_ID(), 'wildWeeds_servicePricing', true) ?></small>
                         </div>
-                    </div>
-                    <!-- image content -->
-                    <?php
-                    if(has_blocks()){
-                        $allBlocks = parse_blocks( get_the_content() );
-                        for ($i=0; $i < count($allBlocks); $i++) {
-                            if($allBlocks[$i]['blockName'] == 'core/image'){
+                        <?php
+                        if(has_blocks()){
+                            $allBlocks = parse_blocks( get_the_content() );
+                            for ($i=0; $i < count($allBlocks); $i++) {
                                 $block = $allBlocks[$i];
                                 echo apply_filters( 'the_content', render_block( $block ) );
                             }
-                        }
-                    };
-                    ?>
-
+                        };
+                        ?>
+                    </div>
 
                 <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
             <?php endif; ?>
         </div>
 

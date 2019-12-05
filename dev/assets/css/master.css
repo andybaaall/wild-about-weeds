@@ -45,8 +45,13 @@
     min-width: 100vw;
 }
 
+.card-group * {
+    border: 0;
+    background-color: white;
+}
+
 .card-width {
-    min-width: 14rem;
+    min-width: 12rem;
 }
 
 .nav-link-text {
