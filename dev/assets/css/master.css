@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
+
 /* green - A6B56A */
 /* white - F6F9E9 */
 /* light grey - DADBD8 */
@@ -14,6 +16,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 2rem ;
     margin: 2rem 0;
@@ -62,6 +66,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 4rem ;
     margin: 2rem 0 2rem;
@@ -78,6 +84,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     height: 3rem;
     width: 3rem;

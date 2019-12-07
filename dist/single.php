@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 
-
 <?php if (have_posts() ): ?>
     <?php while ( have_posts(get_the_ID()) ): ?>
         <?php the_post(); ?>

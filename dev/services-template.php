@@ -13,7 +13,6 @@ Template Post Type: page
             <?php
             $typeServiceArgs = array(
                 'post_type'         => 'service',
-                'posts_per_page'    => 10
             );
             $typeService_query = new WP_Query( $typeServiceArgs );
             ?>
