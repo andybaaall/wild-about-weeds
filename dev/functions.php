@@ -46,6 +46,7 @@ function add_custom_post_types(){
 
 add_action('init', 'add_custom_post_types');
 
+require get_parent_theme_file_path('./inc/educational_alert.php');
 require_once get_template_directory() . '/inc/customizer.php';
 require_once get_template_directory() . '/inc/custom_fields.php';
 
