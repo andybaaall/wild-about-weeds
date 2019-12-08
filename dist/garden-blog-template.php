@@ -7,9 +7,9 @@ Template Post Type: page
 
 <?php get_header(); ?>
 
-<h3 class="text-center type-colour page-content">Garden Blog</h1>
+<h3 class="text-center type-colour">Garden Blog</h1>
 
-    <div class="container page-content">
+    <div class="container page-content overflow-scroll">
         <div class="row top-level-blogs-container">
             <?php
             $typePostArgs = array(

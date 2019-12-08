@@ -76,7 +76,6 @@
 
 .footer-container-page {
     padding-top: 1rem;
-    padding-bottom: 3rem;
     bottom: -1rem;
 }
 
@@ -116,8 +115,24 @@
 
 .menu-footer {
     z-index: 300 !important;
-    position: absolute !important;
-    bottom: -2rem !important;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   text-align: center;
+}
+
+.overflow-scroll {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.page-content {
+    margin-bottom: 26vh !important;
 }
 
 

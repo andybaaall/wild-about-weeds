@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container page-content">
+<div class="container page-content overflow-scroll">
     <div class="row top-level-blogs-container">
         <?php
         $typePostArgs = array(
@@ -50,7 +50,7 @@
         $typeService_query = new WP_Query( $typeServiceArgs );
         ?>
         <?php if ( $typeService_query->have_posts() ): ?>
-            <h3 class="text-center type-colour page-content mt-4">Our Services:</h3>
+            <h3 class="text-center type-colour mt-4">Our Services:</h3>
             <div class="row dividers-parent">
                 <?php while ( $typeService_query->have_posts() ): ?>
                     <?php $typeService_query->the_post();?>

@@ -2,7 +2,8 @@
 <?php wp_footer(); ?>
 <?php require 'links.php';?>
 
-<div id="footerContainer" class="footer-container-page header-footer-container header-footer-container-colour align-items-center">
+
+<footer id="footerContainer" class="footer footer-container-page header-footer-container header-footer-container-colour align-items-center">
     <?php
     if (get_theme_mod('wildWeeds_socialSetting-msgName') != null) {
         $name = get_theme_mod('wildWeeds_socialSetting-msgName');
@@ -42,6 +43,8 @@
             <?php endif; ?>
         </div>
     </div>
-</div>
+</footer>
+
+
 </body>
 </html>

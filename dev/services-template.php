@@ -7,8 +7,8 @@ Template Post Type: page
 
 <?php get_header(); ?>
 
-<h3 class="text-center type-colour page-content">Our Services:</h1>
-    <div class="container page-content">
+<h3 class="text-center type-colour ">Our Services:</h1>
+    <div class="container page-content overflow-scroll">
         <div class="row dividers-parent">
             <?php
             $typeServiceArgs = array(
