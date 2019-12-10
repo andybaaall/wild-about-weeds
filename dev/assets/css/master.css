@@ -151,6 +151,12 @@
     width: 100%;
 }
 
+.two-column-container * {
+    column-count: 2;
+    -webkit-column-gap: 1.5rem;
+    -moz-column-gap: 1.5rem;
+    column-gap: 1.5rem;
+}
 
 /* media queries */
 
