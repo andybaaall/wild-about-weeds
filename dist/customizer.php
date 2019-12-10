@@ -79,7 +79,7 @@ function wildWeeds_customize_register( $wp_customize ) {
         ) );
         $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wildWeeds_socialControl-email', array(
           'label'      => __( 'Email Address', 'wildWeeds' ),
-          'description' => 'Set up a face link at the bottom of the page. If you leave the field blank, no email link will be displayed.',
+          'description' => 'Set up an email link at the bottom of the page. If you leave the field blank, no email link will be displayed.',
           'section'    => 'wildWeeds_socialSection',
           'settings'   => 'wildWeeds_socialSetting-email'
         ) ) );
@@ -160,6 +160,10 @@ function wildWeeds_customize_css(){
         color:  <?php echo get_theme_mod('wildWeeds_coloursSetting-typeColour', '#4F5456'); ?> !important;
     }
 
+    .svg-colour {
+        fill: <?php echo get_theme_mod('wildWeeds_coloursSetting-typeColour', '#4F5456'); ?> !important;
+    }
+
     .footer-link-text {
         color:  <?php echo get_theme_mod('wildWeeds_coloursSetting-accentColour', '#F6F9E9'); ?> !important;
     }
@@ -175,7 +179,6 @@ function wildWeeds_customize_css(){
     .dividers-parent section:nth-child(even){
         background-color: <?php echo get_theme_mod('wildWeeds_coloursSetting-dividerColour', '#DADBD8'); ?>
     }
-
     </style>
     <?php
 }

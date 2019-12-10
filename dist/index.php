@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="container page-content overflow-scroll">
+<div class="container page-content overflow-unset">
     <div class="row top-level-blogs-container">
         <?php
         $typePostArgs = array(

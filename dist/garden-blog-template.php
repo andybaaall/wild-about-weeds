@@ -9,7 +9,7 @@ Template Post Type: page
 
 <h3 class="text-center type-colour">Garden Blog</h1>
 
-    <div class="container page-content overflow-scroll">
+    <div class="container page-content overflow-unset">
         <div class="row top-level-blogs-container">
             <?php
             $typePostArgs = array(

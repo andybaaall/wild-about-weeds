@@ -122,12 +122,11 @@
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: red;
    text-align: center;
 }
 
-.overflow-scroll {
-    overflow-y: scroll;
+.overflow-unset {
+    overflow-y: unset;
     overflow-x: hidden;
 }
 
@@ -135,6 +134,22 @@
     margin-bottom: 26vh !important;
 }
 
+.icon-wrapper {
+    position: relative;
+    height: 2.75rem;
+    width: 2.75rem;
+}
+
+.mail-icon-wrapper {
+    position: relative;
+    height: 2rem;
+    width: 2.75rem;
+}
+
+.svg-icon {
+    height: 100%;
+    width: 100%;
+}
 
 
 /* media queries */

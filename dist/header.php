@@ -2,7 +2,6 @@
 <html lang="en" dir="ltr">
 <head>
     <?php wp_head(); ?>
-    <?php require 'links.php';?>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,19 +13,11 @@
     <?php
     // theme settings
 
-    // logo image
-    if (get_theme_mod('wildWeeds_logoSetting') != null) {
-        $logoBg = get_theme_mod('wildWeeds_logoSetting');
-    } else {
-        $logoBg =  get_template_directory_uri() . '/img/waw_logo_no-caption.png';
-    }
-
     if (file_exists( get_template_directory() . '/front-page.php') ) {
         $home =  get_site_url();
     } else {
         $home =  get_site_url() . '/index.php';
     }
-
     ?>
 
     <!-- navbar / logo-->
@@ -46,9 +37,15 @@
             <!-- logo -->
             <div class="row">
                 <div class="col d-flex justify-content-center align-items-center">
+                <?php if (get_theme_mod('wildWeeds_logoSetting') != null): ?>
                     <a href="<?php echo $home ?>" class="nav-logo" aria-label="Wild About Weeds"  style="
-                    background-image: url(<?php echo $logoBg; ?>) ;
+                    background-image: url(<?php echo get_theme_mod('wildWeeds_logoSetting'); ?>) ;
                     "></a>
+                <?php else: ?>
+                    <div class="col">
+                        <h1 class="type-colour pt-4"><?php echo get_bloginfo('name'); ?></h1>
+                    </div>
+                <?php endif; ?>
                 </div>
             </div>
 
@@ -62,13 +59,16 @@
             <?php endif; ?>
 
             <!-- menu items - desktop -->
-            <div id="desktopNav" class="row d-flex justify-content-between mb-2 desktop-nav">
-                <?php foreach ($topNav as $navItem): ?>
-                    <?php echo '<div class="col d-flex justify-content-around desktop-nav-item">
-                    <a class="nav-link-text type-colour" href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a>
-                    </div>'; ?>
-                <?php endforeach; ?>
-            </div>
+            <?php if ($topNav): ?>
+                <div id="desktopNav" class="row d-flex justify-content-between mb-2 desktop-nav">
+                    <?php foreach ($topNav as $navItem): ?>
+                        <?php echo '<div class="col d-flex justify-content-around desktop-nav-item">
+                        <a class="nav-link-text type-colour" href="'.$navItem->url.'" title="'.$navItem->title.'">'.$navItem->title.'</a>
+                        </div>'; ?>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+
         </div>
     </nav>
 

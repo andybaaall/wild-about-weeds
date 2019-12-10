@@ -160,6 +160,10 @@ function wildWeeds_customize_css(){
         color:  <?php echo get_theme_mod('wildWeeds_coloursSetting-typeColour', '#4F5456'); ?> !important;
     }
 
+    .svg-colour {
+        fill: <?php echo get_theme_mod('wildWeeds_coloursSetting-typeColour', '#4F5456'); ?> !important;
+    }
+
     .footer-link-text {
         color:  <?php echo get_theme_mod('wildWeeds_coloursSetting-accentColour', '#F6F9E9'); ?> !important;
     }
@@ -175,7 +179,6 @@ function wildWeeds_customize_css(){
     .dividers-parent section:nth-child(even){
         background-color: <?php echo get_theme_mod('wildWeeds_coloursSetting-dividerColour', '#DADBD8'); ?>
     }
-
     </style>
     <?php
 }

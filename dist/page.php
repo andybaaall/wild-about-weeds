@@ -1,33 +1,14 @@
 <?php get_header(); ?>
 
-<div class="container">
-    <?php
-    $typePageArgs = array(
-        'post_type'         => 'page',
-    );
-    $typePage_query = new WP_Query( $typePageArgs );
-    ?>
-
-    <?php if ( $typePage_query->have_posts() ): ?>
-        <?php while ( $typePage_query->have_posts() ): ?>
-
-            <?php $typePage_query->the_post();?>
+<?php if (have_posts() ): ?>
+    <?php while ( have_posts(get_the_ID()) ): ?>
+        <?php the_post(); ?>
+        <div class="container page-content overflow-unset">
             <h1><?php echo the_title(); ?></h1>
-                <?php
-                if(has_blocks()){
-                    $allBlocks = parse_blocks( get_the_content() );
-                    for ($i=0; $i < count($allBlocks); $i++) {
-                        $block = $allBlocks[$i];
-                        echo apply_filters( 'the_content', render_block( $block ) );
-                    }
-                };
-                ?>
-            </div>
-
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
-    <?php endif; ?>
-
-</div>
+            <small><?php echo the_date(); ?></small>
+            <?php echo the_content(); ?>
+        </div>
+    <?php endwhile; ?>
+<?php endif; ?>
 
 <?php get_footer(); ?>
