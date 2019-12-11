@@ -10,15 +10,6 @@
 </head>
 <body>
 
-    <?php
-    // theme settings
-
-    if (file_exists( get_template_directory() . '/front-page.php') ) {
-        $home =  get_site_url();
-    } else {
-        $home =  get_site_url() . '/index.php';
-    }
-    ?>
 
     <!-- navbar / logo-->
     <!-- hamburger button -->
@@ -38,12 +29,12 @@
             <div class="row">
                 <div class="col d-flex justify-content-center align-items-center">
                 <?php if (get_theme_mod('wildWeeds_logoSetting') != null): ?>
-                    <a href="<?php echo $home ?>" class="nav-logo" aria-label="Wild About Weeds"  style="
+                    <a href="<?php echo  get_site_url() ?>" class="nav-logo" aria-label="Wild About Weeds"  style="
                     background-image: url(<?php echo get_theme_mod('wildWeeds_logoSetting'); ?>) ;
                     "></a>
                 <?php else: ?>
                     <div class="col">
-                        <a href="<?php echo $home ?>" class="header-text-logo"><h1 class="type-colour pt-4"><?php echo get_bloginfo('name'); ?></h1></a>
+                        <a href="<?php echo  get_site_url() ?>" class="header-text-logo"><h1 class="type-colour pt-4"><?php echo get_bloginfo('name'); ?></h1></a>
                     </div>
                 <?php endif; ?>
                 </div>

@@ -2,7 +2,7 @@
 <p>yo i'm page php</p>
 
 <?php if (have_posts() ): ?>
-    <?php while ( have_posts(get_the_ID()) ): ?>
+    <?php while ( have_posts() ): ?>
         <?php the_post(); ?>
         <div class="container page-content overflow-unset">
             <h1><?php echo the_title(); ?></h1>
