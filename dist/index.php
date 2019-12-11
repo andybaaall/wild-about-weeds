@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<p>yo, i'm the index page!</p>
-
 <div class="container page-content overflow-unset">
     <div class="card-group">
         <?php if ( have_posts() ): ?>
