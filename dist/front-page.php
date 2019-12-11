@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<p>yo i'm front-page php</p>
 <?php if (have_posts() ): ?>
     <?php while ( have_posts() ): ?>
         <?php the_post(); ?>

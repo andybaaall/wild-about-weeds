@@ -158,6 +158,10 @@
     column-gap: 1.5rem;
 }
 
+.header-text-logo:hover {
+    text-decoration: none;
+}
+
 /* media queries */
 
 @media only screen and (max-width: 425px) {

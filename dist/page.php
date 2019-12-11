@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<p>yo i'm page php</p>
 
 <?php if (have_posts() ): ?>
     <?php while ( have_posts(get_the_ID()) ): ?>

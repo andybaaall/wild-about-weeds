@@ -43,7 +43,7 @@
                     "></a>
                 <?php else: ?>
                     <div class="col">
-                        <h1 class="type-colour pt-4"><?php echo get_bloginfo('name'); ?></h1>
+                        <a href="<?php echo $home ?>" class="header-text-logo"><h1 class="type-colour pt-4"><?php echo get_bloginfo('name'); ?></h1></a>
                     </div>
                 <?php endif; ?>
                 </div>

@@ -1,11 +1,12 @@
 <?php get_header(); ?>
 
+<p>yo, i'm the index page!</p>
+
 <div class="container page-content overflow-unset">
     <div class="row top-level-blogs-container">
         <?php
         $typePostArgs = array(
             'post_type'         => 'post',
-            'posts_per_page'    => 10
         );
         $typePost_query = new WP_Query( $typePostArgs );
         ?>

@@ -60,7 +60,6 @@ $media = array(
         <?php if ( have_posts() ): ?>
             <?php while ( have_posts() ): ?>
                 <?php the_post(); ?>
-                <h3 class="text-center type-colour "><?php echo the_title();  ?></h1>
                 <div class="two-column-container">
                     <?php the_content(); ?>
                 </div>
