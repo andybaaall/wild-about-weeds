@@ -153,6 +153,7 @@
 
 .two-column-container * {
     column-count: 2;
+    -ms-column-gap: 1.5rem;
     -webkit-column-gap: 1.5rem;
     -moz-column-gap: 1.5rem;
     column-gap: 1.5rem;
