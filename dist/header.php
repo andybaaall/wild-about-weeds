@@ -34,7 +34,7 @@
                     "></a>
                 <?php else: ?>
                     <div class="col">
-                        <a href="<?php echo  get_site_url() ?>" class="header-text-logo"><h1 class="type-colour pt-4"><?php echo get_bloginfo('name'); ?></h1></a>
+                        <a href="<?php echo  get_site_url() ?>" class="header-text-link"><h1 class="type-colour pt-4 header-text-type"><?php echo get_bloginfo('name'); ?></h1></a>
                     </div>
                 <?php endif; ?>
                 </div>

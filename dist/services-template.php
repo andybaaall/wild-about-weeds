@@ -28,6 +28,8 @@ Template Post Type: page
                             <br>
                             <small><?php echo get_post_meta(get_the_ID(), 'wildWeeds_servicePricing', true) ?></small>
                         </div>
+                    </div>
+                    <div class="row">
                         <?php
                         if(has_blocks()){
                             $allBlocks = parse_blocks( get_the_content() );

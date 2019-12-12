@@ -34,6 +34,11 @@
                 <div class="card card-width m-2">
                     <div class="card-body">
                         <h4 class="text-center type-colour"><?php the_title(); ?></h2>
+                            <?php if (get_post_type('service')): ?>
+                            <small><?php echo get_post_meta(get_the_ID(), 'wildWeeds_servicePricing', true) ?></small>
+                            <br>
+                            <br>
+                        <?php endif; ?>
                         <?php the_content(); ?>
                     </div>
                 </div> <!-- card -->

@@ -159,8 +159,12 @@
     column-gap: 1.5rem;
 }
 
-.header-text-logo:hover {
+.header-text-link:hover {
     text-decoration: none;
+}
+
+.header-text-type {
+    max-width: 75%; 
 }
 
 /* media queries */
